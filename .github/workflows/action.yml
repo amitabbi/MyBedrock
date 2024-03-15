@@ -2,7 +2,7 @@ on:
   push:
     branches:
       - "main"
-name: Deploy to Salesforce Production
+name: Deploy to Bedrock Salesforce Production
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
           sf org login sfdx-url --set-default --sfdx-url-file <(echo "${{ inputs.SFDX_AUTH_URL }}")
 
       - name: Build, Test & Deploy
-        uses: aabbi/sfdx-deploy@v1
+        uses: amitabbi/BedrockRepo@v1
         env:
           TARGET_USERNAME: amitabbibed@bedrock.com
           SOURCE_PATH: force-app
