@@ -1,6 +1,11 @@
 name: Deploy To Environment
 description: Deploys to a specified environment
 
+on:
+  push:
+    paths:
+      - force-app/**
+
 inputs:
   validateOnly:
     description: 'Run the deployment as validation only'
