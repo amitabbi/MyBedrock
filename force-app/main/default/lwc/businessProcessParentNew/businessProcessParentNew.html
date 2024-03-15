@@ -1,0 +1,51 @@
+<template>
+    <template if:true={showParent}>
+    <template lwc:if={showChildren}>
+    <lightning-card title="Related Processes">
+
+
+        
+    <lightning-layout>
+        
+
+        <lightning-layout-item padding="around-small">
+            <div>
+        <c-business-process-view viewobjectname={viewobjectname} viewflds={viewflds} recordid={recordId} viewrellistid={viewrellistid}></c-business-process-view>
+    </div>
+    </lightning-layout-item>
+
+    
+        <lightning-layout-item padding="around-small">
+            <div>
+        <c-business-process-create createobjectname={createobjectname}></c-business-process-create>
+    </div>
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small">
+            <div>
+        <c-business-process-update updateobjectname={updateobjectname} flds={flds} recordid={recordId} rellistid={rellistid}></c-business-process-update>
+    </div>
+    </lightning-layout-item>
+
+
+
+    
+    </lightning-layout>
+
+
+</lightning-card>
+
+</template>
+
+
+</template>
+<template if:true={showBPMessage}>
+    <lightning-card>
+    <div style="height: 100px;" class="slds-m-around_small" title="Error">
+    <p style="font-size:x-large; color:red;"><strong>Uh..Ho... No business process found</strong></p>
+</div>
+</lightning-card>
+</template>
+
+
+</template>
