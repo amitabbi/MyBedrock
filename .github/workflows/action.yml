@@ -25,10 +25,6 @@ jobs:
             ${{ runner.os }}-npm-cache-
             ${{ runner.os }}-
 
-      - name: Install Dependencies
-        if: steps.npm_cache_id.outputs.cache-hit != 'true'
-        run: npm ci
-
       - name: Login to Environment
         shell: bash
         run: |
