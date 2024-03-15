@@ -9,5 +9,12 @@ jobs:
       - uses: actions/checkout@v2
       - run: npm install sfdx-cli -g
       - run: echo "${{ secrets.SALESFORCE_JWT_SECRET_KEY }}" > server.key
+      - uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      - uses: pmd/pmd-github-action@v1
+        with:
+          rulesets: 'ruleset.xml'
       - run: sfdx force:auth:jwt:grant --clientid=${{ secrets.SALESFORCE_CONSUMER_KEY }} --jwtkeyfile=server.key --username=${{ secrets.SALESFORCE_DEVHUB_USERNAME }} --setdefaultdevhubusername
-      - run: sfdx force:source:deploy --manifest=manifest/package.xml -u ${{ secrets.SALESFORCE_DEVHUB_USERNAME }}
+      - run: sfdx force:source:deploy --manifest=manifest/package.xml --testlevel=RunLocalTests -u ${{ secrets.SALESFORCE_DEVHUB_USERNAME }}
