@@ -9,7 +9,7 @@ public with sharing class GetUpdateProcessData {
         
         //String myObj = objectApiName;
         String query = 'SELECT Id, Name from objectApiName';
-        ‘SELECT Id, Name FROM Account WHERE AccountId = \” + recId + ‘\”;
+        //‘SELECT Id, Name FROM Account WHERE AccountId = \” + recId + ‘\”;
         List<sObject> objr = Database.query(query + ' WHERE OpportunityId = :recId');
         //List<Object> objr = [SELECT Id, Name FROM myObj WHERE OpportunityId =: recId];
         return objr;
