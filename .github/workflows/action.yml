@@ -11,13 +11,13 @@ jobs:
       - run: echo "🐧 GitHub Action running on ${{ runner.os }}"
       - run: echo "🔎 Retrieving ${{ github.ref }} from ${{ github.repository }}."
       - uses: actions/checkout@v2
-      - name: Install SFDX CLI and Scanner
+      - name: Install Salesforce CLI and Scanner
         run: |
           sudo npm install @salesforce/cli --global
           sf --version
           sf plugins --core
           sf plugins install @salesforce/sfdx-scanner
-      - name: Run SFDX CLI Scanner
+      - name: Run Salesforce CLI Scanner
         run: |
           sf scanner:run -f html -t "force-app" -e "eslint,retire-js,pmd,cpd" -c "Design,Best Practices,Code Style,Performance,Security" --outfile ./reports/scan-reports.html
       - uses: actions/upload-artifact@v3
