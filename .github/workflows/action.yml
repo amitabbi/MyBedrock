@@ -11,16 +11,10 @@ jobs:
       - run: echo "🐧 GitHub Action running on ${{ runner.os }}"
       - run: echo "🔎 Retrieving ${{ github.ref }} from ${{ github.repository }}."
       - uses: actions/checkout@v2
-      # Install PMD
-      - name: 'Install PMD'
+      # Install SFDX CLI Scanner
+      - name: Run SFDX CLI Scanner
         run: |
-            wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.0.0-rc4/pmd-dist-7.0.0-rc4-bin.zip
-            unzip pmd-dist-7.0.0-rc4-bin.zip -d ~
-            mv ~/pmd-bin-7.0.0-rc4 ~/pmd
-            ~/pmd/bin/./pmd pmd --version
-      # Run PMD scan
-      - name: 'Run PMD scan'
-        run: ~/pmd/bin/pmd.bat -d ./force-app/main/default/classes -f html -R ./pmd/ruleset.xml -reportfile ~/pmd/bin/output.html
+          sfdx scanner:run -f html -t "force-app" -e "eslint,retire-js,pmd,cpd" -c "Design,Best Practices,Code Style,Performance,Security" --outfile ./reports/scan-reports.html
       - run: npm install sfdx-cli -g
       - run: echo "${{ secrets.SALESFORCE_JWT_SECRET_KEY }}" > server.key
       - run: sfdx force:auth:jwt:grant --clientid=${{ secrets.SALESFORCE_CONSUMER_KEY }} --jwtkeyfile=server.key --username=${{ secrets.SALESFORCE_DEVHUB_USERNAME }} --setdefaultdevhubusername
