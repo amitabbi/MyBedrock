@@ -36,7 +36,7 @@ global class BatchAccountUpdate implements Database.Batchable<sObject>, Database
          // Run PMD
                    // Run PMD with versions
 // Run PMD with version
-// Try again
+// Try again. Keep going
     }
  
 }
