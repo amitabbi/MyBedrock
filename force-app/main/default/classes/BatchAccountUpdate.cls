@@ -31,6 +31,7 @@ global class BatchAccountUpdate implements Database.Batchable<sObject>, Database
          // blah more
          // blah :)
          // Nice
+         // Nice work
     }
  
 }
