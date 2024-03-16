@@ -16,7 +16,6 @@ jobs:
           sudo npm install @salesforce/cli --global
           sf --version
           sf plugins --core
-          npm install sfdx-cli -g
           sf plugins install @salesforce/sfdx-scanner
       - name: Run SFDX CLI Scanner
         run: |
