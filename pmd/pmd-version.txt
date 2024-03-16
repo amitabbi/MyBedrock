@@ -1,2 +1,2 @@
 pmd:
-    version: 7.0.0-rc4
+    version: pmd-bin-7.0.0-rc4
