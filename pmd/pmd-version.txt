@@ -1,5 +1,5 @@
 pmd:
-    version: 7.0.0-rc4
-    previous_version: 7.0.0-rc3
+    version: latest
+    previous_version: latest
     date: 30-September-2023
     release_type: major
