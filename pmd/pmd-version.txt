@@ -1,2 +1,5 @@
 pmd:
-    version: https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.0.0-rc4/pmd-dist-7.0.0-rc4-bin.zip
+    version: 6.34.0
+    previous_version: 6.33.0
+    date: 24-April-2021
+    release_type: minor
