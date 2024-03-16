@@ -11,7 +11,7 @@ jobs:
       - run: echo "🐧 GitHub Action running on ${{ runner.os }}"
       - run: echo "🔎 Retrieving ${{ github.ref }} from ${{ github.repository }}."
       - uses: actions/checkout@v2
-      - run: npm install sfdx-cli -g
+      - run: npm install salesforce-cli -g
       # Install SFDX CLI Scanner
       - name: Install the SFDX CLI Scanner
         run: |
