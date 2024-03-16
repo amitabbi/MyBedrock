@@ -13,8 +13,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install SFDX CLI and Scanner
         run: |
-          npm install sfdx-cli
-          npx sf plugins install @salesforce/sfdx-scanner
+          npm install sfdx-cli -g
+          sf plugins install @salesforce/sfdx-scanner
       - name: Run SFDX CLI Scanner
         run: |
           sf scanner:run -f html -t "force-app" -e "eslint,retire-js,pmd,cpd" -c "Design,Best Practices,Code Style,Performance,Security" --outfile ./reports/scan-reports.html
