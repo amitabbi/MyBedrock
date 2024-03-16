@@ -14,10 +14,9 @@ jobs:
       # Install PMD
       - name: 'Install PMD'
         run: |
-            PMD_VERSION=`cat pmd/pmd-version.txt`
-            wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F$PMD_VERSION/pmd-bin-$PMD_VERSION.zip
-            unzip pmd-bin-$PMD_VERSION.zip -d ~
-            mv ~/pmd-bin-$PMD_VERSION ~/pmd
+            wget https://github.com/pmd/pmd/releases/download/pmd_releases%2F7.0.0-rc4/pmd-dist-7.0.0-rc4-bin.zip
+            unzip pmd-bin-7.0.0-rc4.zip -d ~
+            mv ~/pmd-bin-7.0.0-rc4 ~/pmd
             ~/pmd/bin/run.sh pmd --version
       # Run PMD scan
       - name: 'Run PMD scan'
