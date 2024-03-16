@@ -11,6 +11,7 @@
 
     <!-- Your rules will come here -->
     <rule ref="category/java/errorprone.xml/EmptyCatchBlock" />
+    <rule ref="category/apex/performance.xml/AvoidDebugStatements" />
     
 
 </ruleset>
