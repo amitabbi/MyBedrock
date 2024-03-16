@@ -13,6 +13,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install SFDX CLI and Scanner
         run: |
+          npm install -g npm
           npm install @salesforce/cli --global
           npm install sfdx-cli -g
           sf plugins install @salesforce/sfdx-scanner
