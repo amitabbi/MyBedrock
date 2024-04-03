@@ -45,6 +45,7 @@ global class BatchAccountUpdate implements Database.Batchable<sObject>, Database
 // Good work !!
 // Test from GitHub Desktop
 // New Repo
+// RN-024 Update
     }
  
 }
